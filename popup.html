@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Tab Corral</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <p id="summary" aria-live="polite">&nbsp;</p>
+
+    <button id="merge" class="primary">Merge all windows into this one</button>
+    <button id="dedupe">Close duplicate tabs</button>
+    <button id="group">Group this window's tabs by site</button>
+
+    <label><input type="checkbox" id="dedupeAfterMerge" /> Close duplicates when merging</label>
+    <label><input type="checkbox" id="groupAfterMerge" /> Group tabs by site when merging</label>
+    <label><input type="checkbox" id="ignoreHash" /> Ignore the #fragment when comparing URLs</label>
+
+    <p id="status" role="status"></p>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

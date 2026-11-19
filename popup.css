@@ -1,0 +1,72 @@
+:root {
+  color-scheme: light dark;
+  --fg: #1d1f24;
+  --muted: #5f6570;
+  --bg: #ffffff;
+  --line: #d5d8de;
+  --accent: #3b5bdb;
+  --accent-fg: #ffffff;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fg: #e8eaee;
+    --muted: #9aa1ad;
+    --bg: #1e2026;
+    --line: #3a3e48;
+    --accent: #7c93f5;
+    --accent-fg: #11131a;
+  }
+}
+body {
+  width: 280px;
+  margin: 0;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font: 13px/1.4 system-ui, sans-serif;
+  color: var(--fg);
+  background: var(--bg);
+}
+p {
+  margin: 0;
+}
+#summary {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+button {
+  font: inherit;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+button.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-fg);
+  font-weight: 600;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+label {
+  display: flex;
+  gap: 6px;
+  align-items: flex-start;
+}
+#status:empty {
+  display: none;
+}
+#status.error {
+  color: #d9480f;
+}

@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Tab Corral",
+  "version": "0.2.0",
+  "description": "Merge all browser windows into one and close duplicate tabs.",
+  "permissions": ["tabs", "tabGroups", "storage"],
+  "background": { "service_worker": "background.js", "type": "module" },
+  "action": {
+    "default_title": "Tab Corral",
+    "default_popup": "popup.html",
+    "default_icon": { "16": "icons/16.png", "48": "icons/48.png", "128": "icons/128.png" }
+  },
+  "icons": { "16": "icons/16.png", "48": "icons/48.png", "128": "icons/128.png" },
+  "commands": {
+    "merge-all": {
+      "suggested_key": { "default": "Alt+Shift+M" },
+      "description": "Merge all windows into the current one"
+    },
+    "dedupe": {
+      "description": "Close duplicate tabs"
+    },
+    "group-by-site": {
+      "description": "Group this window's tabs by site"
+    }
+  }
+}
